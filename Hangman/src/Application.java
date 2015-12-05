@@ -35,15 +35,15 @@ public class Application {
 			case 1: 
 				word = "Elephant"; break; // if number generated is 1, then word is set to Elephant. 
 			
-			case 2: word = "Colts"; // if number generated is 2, then word is set to Colts. 
+			case 2: word = "Colts"; break; // if number generated is 2, then word is set to Colts. 
 				
 			case 3: word = "Airport"; break; // if number generated is 3, then word is set to Airport. 
 
 			case 4: word = "Fallout4"; break; // if number generated is 4, then word is set to Fallout4. 
 				
-			case 5: word = "Facebook"; // if number generated is 5, then word is set to Facebook. 
+			case 5: word = "Facebook"; break; // if number generated is 5, then word is set to Facebook. 
 		
-			case 6: word = "Twitter"; // if number generated is 6, then word is set to Twitter. 
+			case 6: word = "Twitter"; break; // if number generated is 6, then word is set to Twitter. 
 	
 			case 7: word = "UnitedStates"; break; // if number generated is 7, then word is set to UnitedStates. 
 			
@@ -78,12 +78,12 @@ public class Application {
 				s2 = new StringBuilder(word); // create a stringbuilder called s2 pass the word randomly selected as a parameter to the second stringbuilder
 				
 				int start = 0; // Initializes the start to 0
-				int end = word.length(); // initializes the end to the length of the word.
+				//int end = word.length(); // initializes the end to the length of the word.
 				
-				s2.delete(start, end); // deletes the characters in the stringbuilder s2 from 0 to the length of the string.
+				s2.delete(start, word.length()); // deletes the characters in the stringbuilder s2 from 0 to the length of the string.
 				
 			for(int i = 0; i < word.length(); i++){ // goes through the length of the word generated and sets the correct number of underscores. 
-				s2.append("_ "); // adds the underscores to the end of the second stringbuilder which was empty. 
+				s2.append("_ "); // adds the underscores to the end of the second stringbuilder which is currently empty. 
 			}
 			
 			
@@ -111,8 +111,8 @@ public class Application {
 				
 				
 				if(s2.toString().replaceAll("\\s+", "").equalsIgnoreCase(s1.toString())){ // checks to see if user correctly guessed the word by comparing it to the first stringbuilder that contains the original word. 
+					System.out.println(s2);
 					System.out.println("You have won!"); // informs user that they have won. 
-					System.out.println("The word was: " + word); // prints out the word. 
 					lives=-1; // sets lives to -1 in order to not trip up the next if statement. 
 					wins++; // increments the win counter if user guesses the word correctly. 
 				}
